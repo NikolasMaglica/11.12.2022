@@ -1,0 +1,54 @@
+
+<div class="container my-5">
+    <h1 class="mb-3">Dodaj materijal na narudžbu na ponudu</h1>
+  
+  
+   <form
+   form #form="ngForm"
+    (ngSubmit)=" updateOrder_Material(addOrder_MaterialRequest.orderid)">
+        
+      
+      <div class="form-group">
+        <label for="orderid">Order Id</label>
+        <input type="text" class="form-control" id="orderid" aria-describedby="emailHelp" placeholder="Unesi narudžbu" 
+        required name=orderid [(ngModel)]="addOrder_MaterialRequest.orderid" #orderid="ngModel">   
+        <div *ngIf="orderid.invalid && (orderid.dirty || orderid.touched)"
+       >
+    
+      <div *ngIf="orderid.errors?.['required']" class="alert alert-primary" role="alert">
+        Unos materijala na ponudu <strong>obavezan</strong>.
+      </div>
+      
+
+      </div> 
+      <div class="form-group">
+        <label for="materialid">Material Id</label>
+        <input type="text" class="form-control" id="materialid" aria-describedby="emailHelp" placeholder="Unesi materijal na narudžbu" 
+        required name=materialid [(ngModel)]="addOrder_MaterialRequest.materialid" #materialid="ngModel">   
+        <div *ngIf="materialid.invalid && (materialid.dirty || materialid.touched)"
+       >
+      </div> 
+      <div *ngIf="materialid.errors?.['required']" class="alert alert-primary" role="alert">
+        Unos materijala na nardudžbu je <strong>obavezan</strong>.
+      </div>
+      <div class="form-group">
+        <label for="quantity">Količina</label>
+        <input type="text" class="form-control" id="quantity" aria-describedby="emailHelp" placeholder="Unesi količinu" 
+        required name=quantity [(ngModel)]="addOrder_MaterialRequest.quantity" #quantity="ngModel">   
+        <div *ngIf="quantity.invalid && (quantity.dirty || quantity.touched)"
+       >
+    
+      <div *ngIf="quantity.errors?.['required']" class="alert alert-primary" role="alert">
+        Unos materijala na narudžbu je <strong>obavezan</strong>.
+      </div>
+    </div>
+
+      
+     
+        
+    
+       <button type="submit" class="btn btn-primary" >Spremi</button>
+  
+
+  
+  </div>
