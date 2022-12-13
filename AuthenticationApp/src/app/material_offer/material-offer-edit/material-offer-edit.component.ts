@@ -43,7 +43,7 @@ this.addMaterial_OfferRequest=response;
     updateMaterial_Offer(id:string){
       this.material_OfferList.updateMaterial_Offer(this.addMaterial_OfferRequest.id,this.addMaterial_OfferRequest).subscribe({
         next:(response)=>{
-          this.router.navigate(['offers']);
+          this.router.navigate(['material_offerlist']);
         }
       });
     }

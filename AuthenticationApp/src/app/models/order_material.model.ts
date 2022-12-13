@@ -1,5 +1,7 @@
 export interface Order_Material{
+    id:string,
     orderid:string,
     materialid:string,
-    quantity:number
+    quantity:number,
+    order_statusid:string
 }

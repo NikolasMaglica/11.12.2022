@@ -10,14 +10,14 @@
       
     <div class="form-group">
       <label for="offerid">Ponuda</label>
-      <select class="form-control" name="offerid" id="offerid" [(ngModel)]="addService_OfferRequest.offerid" *ngIf="addService_OfferRequest.offerid==''">
+      <select class="form-control" name="offerid" id="offerid" [(ngModel)]="addService_OfferRequest.offerid" *ngIf="addService_OfferRequest.offerid!=''">
         <option *ngFor="let type of Offer$|async" [value]="type.id">{{type.id}}</option>
       </select>
     </div>
 
     <div class="form-group">
       <label for="serviceid">Ponuda</label>
-      <select class="form-control" name="serviceid" id="serviceid" [(ngModel)]="addService_OfferRequest.serviceid" *ngIf="addService_OfferRequest.serviceid==''">
+      <select class="form-control" name="serviceid" id="serviceid" [(ngModel)]="addService_OfferRequest.serviceid" *ngIf="addService_OfferRequest.serviceid!=''">
         <option *ngFor="let type of Service$|async" [value]="type.id">{{type.id}}</option>
       </select>
     </div>

@@ -1,20 +1,25 @@
 <div class="container my-5">
     <h1 class="mb-3">Dodaj uslugu na ponudu</h1>
   
-    <table class="table" *ngIf="order_material  && order_material > 0">
+    <table class="table">
         <thead> 
             <tr>
+              <th>Id</th>
                 <th>OrderId</th>
                 <th>MaterialId</th>
                 <th>Quantity</th>
+                <th>Status</th>
                
             </tr>
         </thead>
         <tbody>
             <tr *ngFor="let order_materials of Order_Material$|async">
+              <td>{{order_materials.id}}</td>
                 <td>{{order_materials.orderid}}</td>
                 <td>{{order_materials.materialid}}</td>
                 <td>{{order_materials.quantity}}</td>
+                <td>{{order_materials.order_statusid}}</td>
+
                 <td>
                     <button class="btn btn-outline-primary me-2 mb-1"
                     [routerLink]="['/order_material','edit', order_materials.id]" data-bs-toggle="modal" data-bs-target="#staticBackdrop"

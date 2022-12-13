@@ -42,7 +42,7 @@ this.addService_OfferRequest=response;
     })
   }
     updateService_Offer(id:string){
-      this.serviceList.updateService_Offer(this.addService_OfferRequest.offerid,this.addService_OfferRequest).subscribe({
+      this.serviceList.updateService_Offer(this.addService_OfferRequest.id,this.addService_OfferRequest).subscribe({
         next:(response)=>{
           this.router.navigate(['service_offerlist']);
         }
